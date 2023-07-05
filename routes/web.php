@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PostController;
+use App\Http\Livewire\CrudApplication;
 use App\Http\Livewire\CrudCompany;
 use App\Http\Livewire\CrudJob;
 use Illuminate\Support\Facades\Route;
@@ -33,4 +34,5 @@ Route::middleware([
     })->name('dashboard');
     Route::get('/jobs',CrudJob::class)->name('jobs');
     Route::get('/companies',CrudCompany::class)->name('companies');
+    Route::get('/applications',CrudApplication::class)->name('applications');
 });
