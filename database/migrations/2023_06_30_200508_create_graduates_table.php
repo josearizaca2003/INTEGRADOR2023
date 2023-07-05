@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('graduates', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('person_id');
+            $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('institution_id');
-            $table->foreign('person_id')->references('id')->on('people');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('institution_id')->references('id')->on('institutions');
             $table->integer('AnioGraduacion');
             $table->string('Carrera', 100);

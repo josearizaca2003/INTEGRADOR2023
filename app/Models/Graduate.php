@@ -27,9 +27,9 @@ class Graduate extends Model
 
 
     // Relación con el modelo Person
-    public function person()
+    public function user()
     {
-        return $this->belongsTo(Person::class);
+        return $this->belongsTo(User::class);
     }
 
     // Relación con el modelo Institution

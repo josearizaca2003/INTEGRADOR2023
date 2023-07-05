@@ -19,6 +19,12 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
     {
         Validator::make($input, [
             'name' => ['required', 'string', 'max:255'],
+            'Apellido' => ['required', 'string', 'max:255'],
+            'FechaNacimiento' => ['required', 'date'],
+            'EstadoCivil' => ['required', 'string'],
+            'Rol' => ['required', 'in:user,admin'],
+            'Celular' => ['required', 'numeric'],
+            'DNI' => ['required', 'numeric'],
             'email' => ['required', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
             'photo' => ['nullable', 'mimes:jpg,jpeg,png', 'max:1024'],
         ])->validateWithBag('updateProfileInformation');
@@ -33,6 +39,12 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
         } else {
             $user->forceFill([
                 'name' => $input['name'],
+                'Apellido' => $input['Apellido'],
+                'FechaNacimiento' => $input['FechaNacimiento'],
+                'EstadoCivil' => $input['EstadoCivil'],
+                'Rol' => $input['Rol'],
+                'Celular' => $input['Celular'],
+                'DNI' => $input['DNI'],
                 'email' => $input['email'],
             ])->save();
         }
@@ -47,6 +59,12 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
     {
         $user->forceFill([
             'name' => $input['name'],
+            'Apellido' => $input['Apellido'],
+            'FechaNacimiento' => $input['FechaNacimiento'],
+            'EstadoCivil' => $input['EstadoCivil'],
+            'Rol' => $input['Rol'],
+            'Celular' => $input['Celular'],
+            'DNI' => $input['DNI'],
             'email' => $input['email'],
             'email_verified_at' => null,
         ])->save();

@@ -1,10 +1,10 @@
 <x-form-section submit="updateProfileInformation">
     <x-slot name="title">
-        {{ __('Profile Information') }}
+
     </x-slot>
 
     <x-slot name="description">
-        {{ __('Update your account\'s profile information and email address.') }}
+
     </x-slot>
 
     <x-slot name="form">
@@ -57,7 +57,62 @@
             <x-label for="name" value="{{ __('Name') }}" />
             <x-input id="name" type="text" class="mt-1 block w-full" wire:model.defer="state.name" autocomplete="name" />
             <x-input-error for="name" class="mt-2" />
+
+        </div><div class="col-span-6 sm:col-span-4">
+            <x-label for="Apellido" value="{{ __('Apellido') }}" />
+            <x-input id="Apellido" type="text" class="mt-1 block w-full" wire:model.defer="state.Apellido" autocomplete="Apellido" />
+            <x-input-error for="Apellido" class="mt-2" />
+
+        </div> <div class="col-span-6 sm:col-span-4">
+            <x-label for="FechaNacimiento" value="{{ __('FechaNacimiento') }}" />
+            <x-input id="FechaNacimiento" type="date" class="mt-1 block w-full" wire:model.defer="state.FechaNacimiento" autocomplete="FechaNacimiento" />
+            <x-input-error for="FechaNacimiento" class="mt-2" />
+
+        </div><div class="col-span-6 sm:col-span-4">
+            <x-label for="EstadoCivil" value="{{ __('EstadoCivil') }}" />
+            <x-input id="EstadoCivil" type="text" class="mt-1 block w-full" wire:model.defer="state.EstadoCivil" autocomplete="EstadoCivil" />
+            <x-input-error for="EstadoCivil" class="mt-2" />
+
+        </div> <div class="col-span-6 sm:col-span-4">
+            <x-label for="Rol" value="{{ __('Rol') }}" />
+            <x-input id="Rol" type="text" class="mt-1 block w-full" wire:model.defer="state.Rol" autocomplete="Rol" />
+            <x-input-error for="Rol" class="mt-2" />
+
+        </div><div class="col-span-6 sm:col-span-4">
+            <x-label for="Celular" value="{{ __('Celular') }}" />
+            <x-input id="Celular" type="numeric" class="mt-1 block w-full" wire:model.defer="state.Celular" autocomplete="Celular" />
+            <x-input-error for="Celular" class="mt-2" />
         </div>
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="DNI" value="{{ __('DNI') }}" />
+            <x-input id="DNI" type="numeric" class="mt-1 block w-full" wire:model.defer="state.DNI" autocomplete="DNI" />
+            <x-input-error for="DNI" class="mt-2" />
+        </div>
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="email" value="{{ __('Email') }}" />
+            <x-input id="email" type="email" class="mt-1 block w-full" wire:model.defer="state.email" autocomplete="username" />
+            <x-input-error for="email" class="mt-2" />
+
+            @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::emailVerification()) && ! $this->user->hasVerifiedEmail())
+                <p class="text-sm mt-2">
+                    {{ __('Your email address is unverified.') }}
+
+                    <button type="button" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" wire:click.prevent="sendEmailVerification">
+                        {{ __('Click here to re-send the verification email.') }}
+                    </button>
+                </p>
+
+                @if ($this->verificationLinkSent)
+                    <p class="mt-2 font-medium text-sm text-green-600">
+                        {{ __('A new verification link has been sent to your email address.') }}
+                    </p>
+                @endif
+            @endif
+        </div>
+
+
+
+
 
         <!-- Email -->
         <div class="col-span-6 sm:col-span-4">

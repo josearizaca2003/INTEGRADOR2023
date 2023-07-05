@@ -25,7 +25,13 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'Apellido',
+        'FechaNacimiento',
+        'EstadoCivil',
+        'DNI',
         'email',
+        'Rol',
+        'Celular',
         'password',
     ];
 
@@ -58,4 +64,10 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+    public function graduate(){
+        return $this->hasMany(Graduate::class);
+    }
+    public function teacher(){
+        return $this->hasMany(Teacher::class);
+    }
 }

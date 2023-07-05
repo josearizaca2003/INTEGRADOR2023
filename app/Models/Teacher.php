@@ -18,8 +18,8 @@ class Teacher extends Model
     public function monitoring(){
         return $this->hasMany(Monitoring::class);
     }
-    public function person()
+    public function user()
     {
-        return $this->belongsTo(Person::class);
+        return $this->belongsTo(User::class);
     }
 }

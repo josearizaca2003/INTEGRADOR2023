@@ -23,7 +23,7 @@
         <!--Tabla lista de items   -->
         <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
             <table class="w-full divide-y divide-gray-200 table-auto">
-              <thead class="bg-indigo-500 text-white">
+              <thead class="bg-black text-white">
                 <tr class="text-left text-xs font-bold  uppercase">
                   <td scope="col" class="px-6 py-3">ID</td>
                   <td scope="col" class="px-6 py-3">TITULO</td>

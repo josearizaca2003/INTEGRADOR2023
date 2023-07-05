@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Person;
+use App\Models\User;
 use App\Models\Teacher;
 use App\Models\Monitoring;
 use App\Models\Graduate;
@@ -70,14 +70,14 @@ class DatabaseSeeder extends Seeder
             ]);
         } */
         Storage::makeDirectory('posts');
-        Person::factory(50)->create();
-        Teacher::factory(50)->create();
-        Institution::factory(50)->create();
-        Graduate::factory(50)->create();
-        Monitoring::factory(50)->create();
+        User::factory(20)->create();
+        Teacher::factory(20)->create();
+        Institution::factory(20)->create();
+        Graduate::factory(20)->create();
+        Monitoring::factory(20)->create();
         Company::factory(5)->create();
         $this->call(JobSeeder::class);
-        Application::factory(50)->create();
+        Application::factory(20)->create();
 
 
     }

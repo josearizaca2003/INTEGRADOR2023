@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\Person;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -19,7 +19,7 @@ class TeacherFactory extends Factory
     {
         return [
             //
-            'person_id' => Person::all()->random()->id,
+            'user_id' => User::all()->random()->id,
             'AreaEspecializacion' => $this->faker->jobTitle,
             'Experiencia' => $this->faker->paragraph,
         ];
