@@ -29,9 +29,8 @@
                     <div class="container mx-auto text-left text-black">
                         <div class="flex items-center">
                             <div class="w-1/2">
-                                <h1 class="text-5xl font-medium mb-2">Welcome to My Agency</h1>
-                                <p class="text-xl mb-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra
-                                    euismod odio, gravida pellentesque urna varius vitae.</p>
+                                <h1 class="text-5xl font-medium mb-2">HOLAAAA!!!!!</h1>
+                                <p class="text-xl mb-12">El trabajo que nunca se empieza es el que tarda más en realizarse.</p>
 
                             </div>
                             <div class="w-1/2 pl-16">

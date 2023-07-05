@@ -1,4 +1,5 @@
 @inject('carbon', 'Carbon\Carbon')
+<div class="relative mx-auto bg-gray-800 dark:bg-gray-700 rounded-t-[2.5rem] h-[63px] max-w-[133px]"></div>
 <div class="mt-16">
     <div class="flex gap-4 justify-center mb-8">
         @foreach ($companies as $company)
